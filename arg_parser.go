@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-const VERSION = "1.0.0"
+const VERSION = "1.0.1"
 
 var TypeInt = "int"
 var TypeBool = "bool"
@@ -117,6 +117,10 @@ func (ap *ArgParser) Parse() (map[string]any, error) {
 	}
 
 	return ret, nil
+}
+
+func (ap *ArgParser) PrintHelp() {
+	flag.Usage()
 }
 
 func defValError(name string, def any) error {
