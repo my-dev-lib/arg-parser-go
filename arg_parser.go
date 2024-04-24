@@ -1,4 +1,4 @@
-package arg_parser_go
+package main
 
 import (
 	"flag"
@@ -117,6 +117,10 @@ func (ap *ArgParser) Parse() (map[string]any, error) {
 	}
 
 	return ret, nil
+}
+
+func (ap *ArgParser) PrintHelp() {
+	flag.Usage()
 }
 
 func defValError(name string, def any) error {
